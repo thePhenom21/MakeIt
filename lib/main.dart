@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:envied/envied.dart';
+
+part 'main.g.dart';
 
 void main() {
   runApp(const MyApp());
+}
+
+@Envied()
+abstract class Env {
+  @EnviedField(varName: 'API_KEY')
+  static const String key = _Env.key;
 }
 
 class MyApp extends StatelessWidget {
